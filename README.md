@@ -1,23 +1,21 @@
-# M3 — Identity, Users, Roles & Permissions
+# M4 — Student Information System (SIS)
 
-GBSBFORYOU School/OS का security and access-control foundation.
+GBSBFORYOU School/OS में Student Master Record का foundation.
 
-## Scope
-- Institution-scoped identity
-- Users and profiles
-- Roles
-- RBAC foundation
-- Relationship-based access
-- Scope-based authorization
-- Deny-by-default
-- Audit-ready permission changes
-- AI authorization boundary
+## Core responsibility
+M4 छात्र की institutional identity/master record को संभालता है। Attendance, Fees, Examination, Transport, Documents आदि अपने domain modules में source-of-truth रहेंगे और Student ID से linked होंगे.
 
-## Scope hierarchy
-Institution → Campus → Department → Program → Class → Section → Subject → Individual Record
+## Included
+- Admission No.
+- Student ID
+- Name, DOB, gender, status
+- Class, section, academic session
+- Parent/guardian information
+- Contact/address
+- Previous institution
+- Notes
+- Institution-scoped prototype storage
+- Mobile-first interface
 
 ## Governance
-GBSBFORYOU software/core को update करता है। संस्था अपने users और operational data को नियंत्रित करती है। Cross-institution access निषिद्ध होना चाहिए।
-
-## Prototype
-यह package UI/foundation है और browser localStorage का उपयोग करता है। इसे production authentication/database/security का विकल्प न माना जाए।
+Student data संस्था के tenant से scoped रहेगा। Cross-institution access निषिद्ध है। AI केवल authorized data scope में कार्य करेगा।
