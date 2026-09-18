@@ -1,21 +1,27 @@
-# M5 — Guardian / Family Management
+# M6 — Class, Section & Academic Structure
 
-M5 छात्र और उसके अधिकृत अभिभावक/परिवार के बीच relationship domain का foundation है।
+संस्था की academic hierarchy का source-of-truth.
 
 ## Core responsibility
-- Guardian profile
-- Family relationship
-- Student linkage by Student ID
-- Primary guardian
-- Emergency contact
-- Communication consent
-- Relationship-scoped access
+- Academic session linkage
+- Program/course
+- Class
+- Section
+- Stream
+- Class teacher
+- Capacity
+- Active/inactive status
+- Student linkage foundation
 
-M4 Student Master Record student identity का source-of-truth है; M5 guardian/family relationship का source-of-truth है।
+## Hierarchy
+Session → Program → Class → Section → Student
 
-## Relationship model
-One Guardian ↔ Many Students
-One Student ↔ Many Authorized Guardians
+## Integration
+- M2: Academic Session & Calendar
+- M4: Student Master Record
+- M7: Subject/Curriculum
+- M10: Timetable
+- M13/M14: Examination and progress
 
-## Prototype
-Browser localStorage आधारित foundation. Production authentication/database/security का विकल्प नहीं।
+## Governance
+हर structure institution और session scope में रहेगा। Cross-institution access निषिद्ध है।
