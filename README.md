@@ -1,21 +1,21 @@
-# M4 — Student Information System (SIS)
+# M5 — Guardian / Family Management
 
-GBSBFORYOU School/OS में Student Master Record का foundation.
+M5 छात्र और उसके अधिकृत अभिभावक/परिवार के बीच relationship domain का foundation है।
 
 ## Core responsibility
-M4 छात्र की institutional identity/master record को संभालता है। Attendance, Fees, Examination, Transport, Documents आदि अपने domain modules में source-of-truth रहेंगे और Student ID से linked होंगे.
+- Guardian profile
+- Family relationship
+- Student linkage by Student ID
+- Primary guardian
+- Emergency contact
+- Communication consent
+- Relationship-scoped access
 
-## Included
-- Admission No.
-- Student ID
-- Name, DOB, gender, status
-- Class, section, academic session
-- Parent/guardian information
-- Contact/address
-- Previous institution
-- Notes
-- Institution-scoped prototype storage
-- Mobile-first interface
+M4 Student Master Record student identity का source-of-truth है; M5 guardian/family relationship का source-of-truth है।
 
-## Governance
-Student data संस्था के tenant से scoped रहेगा। Cross-institution access निषिद्ध है। AI केवल authorized data scope में कार्य करेगा।
+## Relationship model
+One Guardian ↔ Many Students
+One Student ↔ Many Authorized Guardians
+
+## Prototype
+Browser localStorage आधारित foundation. Production authentication/database/security का विकल्प नहीं।
