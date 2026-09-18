@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GBSBFORYOU/OS — Prototype</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f4f6f8;color:#18202a}
+.app{display:flex;min-height:100vh}.side{width:240px;background:#10233f;color:#fff;padding:18px 14px;position:fixed;top:0;bottom:0}.brand{font-weight:800;font-size:20px;padding:8px 10px 20px}.brand small{display:block;font-weight:500;font-size:11px;opacity:.65;margin-top:4px}
+.nav button{width:100%;border:0;background:transparent;color:#dce7f7;text-align:left;padding:11px 12px;border-radius:10px;margin:2px 0;font-size:14px}.nav button.active,.nav button:hover{background:#24476f;color:#fff}.main{margin-left:240px;width:calc(100% - 240px);padding:22px;max-width:1500px}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:18px}.top h1{margin:0;font-size:25px}.sub{color:#667386;font-size:13px}.pill{padding:7px 10px;background:#e8f6ee;color:#177044;border-radius:999px;font-size:12px;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:#fff;border:1px solid #e3e8ee;border-radius:15px;padding:17px;box-shadow:0 2px 8px rgba(20,35,50,.04)}.metric{font-size:28px;font-weight:800;margin:7px 0}.muted{color:#718096;font-size:12px}.up{color:#177044;font-size:12px;font-weight:700}.warn{color:#a15b00;font-size:12px;font-weight:700}
+.two{display:grid;grid-template-columns:1.35fr 1fr;gap:14px;margin-top:14px}.section-title{font-weight:800;margin-bottom:12px}.row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #edf0f3}.row:last-child{border-bottom:0}.status{font-size:11px;padding:5px 8px;border-radius:7px;background:#edf4ff;color:#285a99;white-space:nowrap}.status.done{background:#e9f8ef;color:#197443}.status.alert{background:#fff4df;color:#9a5a00}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.quick button{border:1px solid #dfe5eb;background:#fff;padding:12px;border-radius:10px;text-align:left;font-weight:700;color:#24364d}.quick span{display:block;font-size:11px;color:#7a8797;font-weight:500;margin-top:4px}
+.footer{margin-top:16px;font-size:11px;color:#7b8795}.mobilebar{display:none}
+@media(max-width:850px){.side{display:none}.main{margin-left:0;width:100%;padding:14px;padding-bottom:72px}.grid{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.quick{grid-template-columns:repeat(2,1fr)}.top h1{font-size:20px}.mobilebar{display:flex;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #ddd;padding:8px;justify-content:space-around;z-index:5}.mobilebar button{border:0;background:transparent;font-size:11px;color:#41536a}.mobilebar b{display:block;font-size:17px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+  <div class="brand">GBSBFORYOU/OS<small>Institutional Operating System</small></div>
+  <div class="nav">
+    <button class="active">⌂ Dashboard</button><button>◷ रोज़नामा</button><button>✓ Tasks & AI Manager</button>
+    <button>👥 Students</button><button>◫ Attendance</button><button>▣ Academics</button><button>▤ Examination</button>
+    <button>₹ Finance</button><button>▤ Documents</button><button>⚙ Compliance</button><button>☁ Cloud Memory</button><button>⚙ Settings</button>
+  </div>
+</aside>
+<main class="main">
+  <div class="top">
+    <div><h1>संस्थान डैशबोर्ड</h1><div class="sub">GBSBFORYOU School OS • आज का संस्थागत संचालन</div></div>
+    <div class="pill">● Local Server Online</div>
+  </div>
+
+  <section class="grid">
+    <div class="card"><div class="muted">आज उपस्थित विद्यार्थी</div><div class="metric">94.6%</div><div class="up">↑ 1.8% पिछले सप्ताह से</div></div>
+    <div class="card"><div class="muted">आज के कार्य</div><div class="metric">42</div><div class="warn">8 समीक्षा हेतु</div></div>
+    <div class="card"><div class="muted">लंबित अनुमोदन</div><div class="metric">7</div><div class="muted">M25 Workflow</div></div>
+    <div class="card"><div class="muted">Compliance</div><div class="metric">91%</div><div class="up">Evidence coverage</div></div>
+  </section>
+
+  <div class="two">
+    <section class="card">
+      <div class="section-title">AI Manager — आज की कार्यस्थिति</div>
+      <div class="row"><div><b>कक्षा 8 की उपस्थिति सत्यापन</b><div class="muted">Schedule + device + LAN evidence</div></div><span class="status done">Verified</span></div>
+      <div class="row"><div><b>स्टाफ दैनिक कार्य रिपोर्ट</b><div class="muted">12/15 responses received</div></div><span class="status alert">3 Pending</span></div>
+      <div class="row"><div><b>फीस outstanding review</b><div class="muted">Finance scope only</div></div><span class="status">Draft</span></div>
+      <div class="row"><div><b>Inspection evidence gap</b><div class="muted">2 documents need verification</div></div><span class="status alert">Review</span></div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">आज का रोज़नामा</div>
+      <div class="row"><div><b>09:05</b> — Staff meeting</div><span class="status done">Linked</span></div>
+      <div class="row"><div><b>10:20</b> — Lab maintenance</div><span class="status done">M16</span></div>
+      <div class="row"><div><b>11:40</b> — Class 10 exam</div><span class="status">M13</span></div>
+      <div class="row"><div><b>13:15</b> — Parent request</div><span class="status alert">Pending</span></div>
+    </section>
+  </div>
+
+  <section class="card" style="margin-top:14px">
+    <div class="section-title">त्वरित कार्य</div>
+    <div class="quick">
+      <button onclick="alert('नया रोज़नामा entry')">＋ नया रोज़नामा<span>Text / Voice entry</span></button>
+      <button onclick="alert('कार्य assignment workflow')">✓ कार्य सौंपें<span>Role + scope + deadline</span></button>
+      <button onclick="alert('Attendance screen')">◷ उपस्थिति<span>Offline-first capture</span></button>
+      <button onclick="alert('Approval inbox')">▣ अनुमोदन<span>Central workflow inbox</span></button>
+      <button onclick="alert('Document vault')">▤ दस्तावेज़<span>Versioned institutional vault</span></button>
+      <button onclick="alert('Evening report preview')">◉ Evening Report<span>AI draft + human review</span></button>
+    </div>
+  </section>
+
+  <div class="footer">Prototype • Core Architecture M26 • M1–M25 integrated concept • AI suggestions remain auditable and approval-controlled.</div>
+</main>
+<div class="mobilebar"><button>⌂<br>Home</button><button>◷<br>रोज़नामा</button><button>✓<br>Tasks</button><button>👥<br>Students</button><button>☰<br>More</button></div>
+</div>
+</body>
+</html>

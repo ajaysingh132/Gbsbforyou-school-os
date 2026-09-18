@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GBSBFORYOU/OS — Complete Institute Prototype</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#eef2f6;color:#182433}
+:root{--nav:#10233f;--line:#dfe5eb;--muted:#6c7a8b;--card:#fff}
+.app{display:flex;min-height:100vh}.side{width:245px;background:var(--nav);color:#fff;padding:16px 12px;position:fixed;inset:0 auto 0 0;overflow:auto}.brand{font-size:20px;font-weight:800;padding:8px 10px 18px}.brand small{display:block;font-size:10px;font-weight:500;opacity:.65;margin-top:4px}.group{margin:14px 8px 5px;color:#8fa8c7;font-size:10px;text-transform:uppercase;letter-spacing:.08em}.nav button{width:100%;border:0;background:transparent;color:#dbe6f4;text-align:left;padding:9px 10px;border-radius:8px;margin:1px 0;font-size:13px}.nav button.active,.nav button:hover{background:#24486f;color:#fff}
+.main{margin-left:245px;width:calc(100% - 245px);padding:18px;max-width:1600px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.title h1{margin:0;font-size:23px}.sub{color:var(--muted);font-size:12px;margin-top:3px}.actions{display:flex;gap:7px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 11px;font-size:12px;font-weight:700}.online{background:#e8f7ee;color:#187345;border:0;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:700}
+.profile{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 15px;display:grid;grid-template-columns:2fr repeat(5,1fr);gap:12px;margin-bottom:14px}.profile b{font-size:13px}.profile .item{border-left:1px solid #edf0f3;padding-left:12px}.profile small{display:block;color:var(--muted);font-size:10px;margin-bottom:3px}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px;box-shadow:0 2px 7px rgba(20,35,50,.035)}.metric{font-size:23px;font-weight:800;margin:4px 0}.muted{color:var(--muted);font-size:10px}.up{font-size:10px;font-weight:700}.warn{font-size:10px;font-weight:700}
+.layout{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:12px;margin-top:12px}.wide{grid-column:span 2}.section-title{font-size:13px;font-weight:800;margin-bottom:9px}.row{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid #edf0f3;font-size:11px}.row:last-child{border-bottom:0}.tag{font-size:9px;padding:4px 6px;border-radius:6px;background:#edf4ff;color:#315c91;white-space:nowrap}.done{background:#e9f7ef;color:#187044}.alert{background:#fff3df;color:#945800}
+.modulegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.module{border:1px solid var(--line);border-radius:9px;padding:10px;background:#fbfcfd}.module b{font-size:11px}.module span{display:block;color:var(--muted);font-size:9px;margin-top:3px}.progress{height:5px;background:#e9edf1;border-radius:10px;margin-top:7px;overflow:hidden}.progress i{display:block;height:100%;background:#416b98}
+.timeline .row{align-items:center}.ai{border-left:3px solid #416b98;padding-left:9px}
+@media(max-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}.profile{grid-template-columns:2fr repeat(3,1fr)}.layout{grid-template-columns:1fr 1fr}.wide{grid-column:span 2}.modulegrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.side{display:none}.main{margin:0;width:100%;padding:10px;padding-bottom:70px}.top{align-items:flex-start}.actions .btn:nth-child(n+3){display:none}.profile{grid-template-columns:1fr 1fr;gap:8px}.profile .item{border-left:0;padding-left:0}.grid{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}.wide{grid-column:auto}.modulegrid{grid-template-columns:repeat(2,1fr)}.title h1{font-size:18px}.mobilebar{display:flex!important}}
+.mobilebar{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #d8dee6;justify-content:space-around;padding:7px;z-index:10}.mobilebar button{border:0;background:transparent;font-size:10px;color:#44566c}.mobilebar b{font-size:16px;display:block}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+<div class="brand">GBSBFORYOU/OS<small>Complete Institutional Operating System</small></div>
+<div class="nav">
+<div class="group">मुख्य</div><button class="active">⌂ संस्थान</button><button>◷ डिजिटल रोज़नामा</button><button>✓ AI Manager</button><button>▣ My Tasks / Approvals</button>
+<div class="group">शैक्षणिक</div><button>👥 विद्यार्थी</button><button>◫ उपस्थिति</button><button>▤ कक्षा / सेक्शन</button><button>📚 पाठ्यक्रम / विषय</button><button>🗓 टाइमटेबल</button><button>📝 परीक्षा</button><button>📊 रिपोर्ट कार्ड / प्रगति</button>
+<div class="group">प्रशासन</div><button>👨‍🏫 शिक्षक / Staff</button><button>₹ फीस / Finance</button><button>🏫 Assets / Campus</button><button>🚌 Transport</button><button>▤ Documents Vault</button><button>⚖ Compliance / Inspection</button><button>▣ Meetings / Budget / Tax</button>
+<div class="group">संचार व सिस्टम</div><button>✉ Institutional Messaging</button><button>👨‍👩‍👧 Student & Parent Portal</button><button>📈 Analytics</button><button>☁ Cloud Memory</button><button>↻ Backup / Sync / Recovery</button><button>⚙ System / Security</button>
+</div></aside>
+
+<main class="main">
+<div class="top">
+<div class="title"><h1>सम्पूर्ण संस्थान — Principal Workspace</h1><div class="sub">GBSBFORYOU/OS • आज का संस्थागत संचालन • School / College / Coaching configurable</div></div>
+<div class="actions"><span class="online">● Local Server Online</span><button class="btn">☁ Sync</button><button class="btn">▣ Report</button><button class="btn">⚙</button></div>
+</div>
+
+<section class="profile">
+<div><small>Institution Profile</small><b>GBSBFORYOU Model Senior Secondary School</b><div class="muted">Campus 01 • Academic Session 2026–27 • Principal Workspace</div></div>
+<div class="item"><small>Students</small><b>1,248</b></div><div class="item"><small>Staff</small><b>86</b></div><div class="item"><small>Classes</small><b>36</b></div><div class="item"><small>Departments</small><b>8</b></div><div class="item"><small>Server Health</small><b>98%</b></div>
+</section>
+
+<section class="grid">
+<div class="card"><div class="muted">आज उपस्थिति</div><div class="metric">94.6%</div><div class="up">+1.8% weekly</div></div>
+<div class="card"><div class="muted">AI कार्य</div><div class="metric">42</div><div class="warn">8 review</div></div>
+<div class="card"><div class="muted">Approvals</div><div class="metric">7</div><div class="warn">Pending</div></div>
+<div class="card"><div class="muted">Exams</div><div class="metric">3</div><div class="muted">Today</div></div>
+<div class="card"><div class="muted">Fees Collection</div><div class="metric">82%</div><div class="up">Session target</div></div>
+<div class="card"><div class="muted">Compliance</div><div class="metric">91%</div><div class="up">Evidence coverage</div></div>
+</section>
+
+<div class="layout">
+<section class="card wide">
+<div class="section-title">AI Manager — आज की संस्थागत कमान</div>
+<div class="row ai"><div><b>Morning Plan</b><div class="muted">Staff tasks, classes, inspections and priority actions prepared</div></div><span class="tag done">Completed</span></div>
+<div class="row ai"><div><b>Progress Monitoring</b><div class="muted">34/42 assigned tasks have evidence or completion updates</div></div><span class="tag">80.9%</span></div>
+<div class="row ai"><div><b>Exception Detection</b><div class="muted">3 timetable exceptions • 2 document gaps • 1 transport delay</div></div><span class="tag alert">Review</span></div>
+<div class="row ai"><div><b>Evening Principal Report</b><div class="muted">Will combine Roznamcha + tasks + attendance + finance + compliance</div></div><span class="tag">Draft</span></div>
+</section>
+
+<section class="card timeline">
+<div class="section-title">डिजिटल रोज़नामा — आज</div>
+<div class="row"><b>09:05</b><span>Staff meeting → M17</span><span class="tag done">Linked</span></div>
+<div class="row"><b>10:20</b><span>Lab maintenance → M16</span><span class="tag done">Linked</span></div>
+<div class="row"><b>11:40</b><span>Class 10 exam → M13</span><span class="tag">Linked</span></div>
+<div class="row"><b>13:15</b><span>Parent request → M22</span><span class="tag alert">Pending</span></div>
+</section>
+
+<section class="card">
+<div class="section-title">Central Approvals — M25</div>
+<div class="row"><span>Leave request</span><span class="tag">Review</span></div>
+<div class="row"><span>Fee concession</span><span class="tag alert">Approval</span></div>
+<div class="row"><span>Document verification</span><span class="tag">Review</span></div>
+<div class="row"><span>Transport request</span><span class="tag">Assigned</span></div>
+</section>
+
+<section class="card wide">
+<div class="section-title">पूरे संस्थान के Module Status — M1–M25</div>
+<div class="modulegrid">
+<div class="module"><b>M1 Institution Profile</b><span>Configuration active</span><div class="progress"><i style="width:100%"></i></div></div>
+<div class="module"><b>M2 Session & Calendar</b><span>2026–27 active</span><div class="progress"><i style="width:100%"></i></div></div>
+<div class="module"><b>M3 Identity / Roles</b><span>86 staff + 1,248 students</span><div class="progress"><i style="width:96%"></i></div></div>
+<div class="module"><b>M4 Student Information</b><span>Profiles & history</span><div class="progress"><i style="width:98%"></i></div></div>
+<div class="module"><b>M5 Guardian / Family</b><span>Linked relationships</span><div class="progress"><i style="width:92%"></i></div></div>
+<div class="module"><b>M6 Classes / Sections</b><span>36 active sections</span><div class="progress"><i style="width:100%"></i></div></div>
+<div class="module"><b>M7 Curriculum / Subjects</b><span>Institution-approved structure</span><div class="progress"><i style="width:88%"></i></div></div>
+<div class="module"><b>M8 Teacher Management</b><span>Academic scope assigned</span><div class="progress"><i style="width:94%"></i></div></div>
+<div class="module"><b>M9 Staff / HR</b><span>Administrative records</span><div class="progress"><i style="width:90%"></i></div></div>
+<div class="module"><b>M10 Timetable</b><span>Conflict checks enabled</span><div class="progress"><i style="width:93%"></i></div></div>
+<div class="module"><b>M11 Attendance</b><span>Offline + verification</span><div class="progress"><i style="width:95%"></i></div></div>
+<div class="module"><b>M12 Finance</b><span>Fees / expenses / audit</span><div class="progress"><i style="width:84%"></i></div></div>
+<div class="module"><b>M13 Examination</b><span>Schedule / marks / result</span><div class="progress"><i style="width:89%"></i></div></div>
+<div class="module"><b>M14 Report Card</b><span>Progress + publication</span><div class="progress"><i style="width:86%"></i></div></div>
+<div class="module"><b>M15 Transport</b><span>Routes / boarding / safety</span><div class="progress"><i style="width:81%"></i></div></div>
+<div class="module"><b>M16 Assets / Campus</b><span>Inventory / maintenance</span><div class="progress"><i style="width:87%"></i></div></div>
+<div class="module"><b>M17 Meetings / Budget / Tax</b><span>Decision + finance planning</span><div class="progress"><i style="width:78%"></i></div></div>
+<div class="module"><b>M18 Communication</b><span>Institutional messaging</span><div class="progress"><i style="width:91%"></i></div></div>
+<div class="module"><b>M19 Document Vault</b><span>Versioned records</span><div class="progress"><i style="width:90%"></i></div></div>
+<div class="module"><b>M20 Compliance / Inspection</b><span>Evidence chain</span><div class="progress"><i style="width:83%"></i></div></div>
+<div class="module"><b>M21 AI Manager</b><span>Context + role + audit aware</span><div class="progress"><i style="width:88%"></i></div></div>
+<div class="module"><b>M21.1 Roznamcha</b><span>Daily institutional record</span><div class="progress"><i style="width:94%"></i></div></div>
+<div class="module"><b>M22 Student / Parent Portal</b><span>Relationship-scoped</span><div class="progress"><i style="width:85%"></i></div></div>
+<div class="module"><b>M23 Analytics</b><span>Decision intelligence</span><div class="progress"><i style="width:82%"></i></div></div>
+<div class="module"><b>M24 Backup / Sync</b><span>Local + secondary + cloud</span><div class="progress"><i style="width:90%"></i></div></div>
+<div class="module"><b>M25 Workflow</b><span>Request → Approval → Audit</span><div class="progress"><i style="width:92%"></i></div></div>
+</div></section>
+
+<section class="card">
+<div class="section-title">आज के प्रमुख संकेत</div>
+<div class="row"><div><b>Academic</b><div class="muted">2 classes need timetable review</div></div><span class="tag alert">2</span></div>
+<div class="row"><div><b>Finance</b><div class="muted">7 pending approvals</div></div><span class="tag">7</span></div>
+<div class="row"><div><b>Compliance</b><div class="muted">2 evidence gaps</div></div><span class="tag alert">2</span></div>
+<div class="row"><div><b>Server / Sync</b><div class="muted">Last sync 2 min ago</div></div><span class="tag done">Healthy</span></div>
+</section>
+
+<section class="card">
+<div class="section-title">Institutional Memory / Cloud</div>
+<div class="row"><span>Operational Memory</span><b>Today</b></div>
+<div class="row"><span>Institutional Memory</span><b>8,421 records</b></div>
+<div class="row"><span>Archive Memory</span><b>12 sessions</b></div>
+<div class="row"><span>Cloud Sync</span><span class="tag done">Protected</span></div>
+</section>
+
+<section class="card">
+<div class="section-title">Quick Actions</div>
+<div class="row"><span>＋ नया रोज़नामा</span><span class="tag">Text / Voice</span></div>
+<div class="row"><span>✓ कार्य सौंपें</span><span class="tag">AI + Workflow</span></div>
+<div class="row"><span>◷ उपस्थिति</span><span class="tag">Offline</span></div>
+<div class="row"><span>▤ नया दस्तावेज़</span><span class="tag">Vault</span></div>
+<div class="row"><span>◉ Evening Report</span><span class="tag">AI Draft</span></div>
+</section>
+</div>
+
+<div class="muted" style="margin:12px 3px 0">Prototype only • M26 Core Architecture backbone • सभी official/high-impact actions human approval और audit के अधीन।</div>
+</main>
+<div class="mobilebar"><button>⌂<b>Home</b></button><button>◷<b>रोज़नामा</b></button><button>✓<b>Tasks</b></button><button>👥<b>Students</b></button><button>☰<b>More</b></button></div>
+</div>
+</body></html>
