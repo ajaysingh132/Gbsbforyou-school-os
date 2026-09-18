@@ -1,27 +1,25 @@
-# M6 — Class, Section & Academic Structure
+# GBSBFORYOU School/OS — Consolidated M0–M6
 
-संस्था की academic hierarchy का source-of-truth.
+This package reorganizes the M1–M6 foundations into one repository structure.
 
-## Core responsibility
-- Academic session linkage
-- Program/course
-- Class
-- Section
-- Stream
-- Class teacher
-- Capacity
-- Active/inactive status
-- Student linkage foundation
+## Repository principle
+- GBSBFORYOU School/OS is the platform software.
+- Each institution is a separate tenant/workspace.
+- Institution operational data belongs to and is managed by that institution.
+- GBSBFORYOU maintains software, security, core services, AI and features.
+- No institution's operational data is treated as general platform data.
+- Cross-institution access must be denied.
 
-## Hierarchy
-Session → Program → Class → Section → Student
-
-## Integration
+## Module ownership
+- M1: Institution Profile
 - M2: Academic Session & Calendar
-- M4: Student Master Record
-- M7: Subject/Curriculum
-- M10: Timetable
-- M13/M14: Examination and progress
+- M3: Identity, Users, Roles & Permissions
+- M4: Student Information System
+- M5: Guardian / Family Management
+- M6: Class, Section & Academic Structure
 
-## Governance
-हर structure institution और session scope में रहेगा। Cross-institution access निषिद्ध है।
+## Important
+The `modules/Mx/source/` directories preserve the individual module foundations. The root `app/` is the consolidated application shell. The next development stage should replace prototype localStorage behavior with the shared M26 services and production database/authentication layers.
+
+## Upload note
+GitHub does not automatically extract ZIP archives. For true consolidation, upload the extracted contents of this package into the repository root rather than uploading this ZIP as another archive.
