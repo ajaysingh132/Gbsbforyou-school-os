@@ -1,39 +1,23 @@
-# M2 — Academic Session & Institutional Calendar
+# M3 — Identity, Users, Roles & Permissions
 
-M2 manages the institution's academic time structure inside its own tenant scope.
+GBSBFORYOU School/OS का security and access-control foundation.
 
-## Core records
+## Scope
+- Institution-scoped identity
+- Users and profiles
+- Roles
+- RBAC foundation
+- Relationship-based access
+- Scope-based authorization
+- Deny-by-default
+- Audit-ready permission changes
+- AI authorization boundary
 
-- Academic session
-- Term / semester
-- Working day
-- Holiday
-- Examination date
-- Admission / enrollment period
-- Institutional event
-- Important deadline
+## Scope hierarchy
+Institution → Campus → Department → Program → Class → Section → Subject → Individual Record
 
 ## Governance
+GBSBFORYOU software/core को update करता है। संस्था अपने users और operational data को नियंत्रित करती है। Cross-institution access निषिद्ध होना चाहिए।
 
-Every calendar record must carry institution scope. One institution must not read or modify another institution's calendar.
-
-The institution controls its own academic calendar. GBSBFORYOU controls the software capabilities used to manage it.
-
-## Planned capabilities
-
-- Create and edit academic sessions
-- Define session start and end dates
-- Configure terms/semesters
-- Mark working and non-working days
-- Add holidays
-- Schedule examinations
-- Add institutional events
-- Record admission/enrollment windows
-- Track important deadlines
-- Calendar day/month/list views
-- Audit important changes
-- Offline queue and synchronization foundation
-
-## Source of truth
-
-M2 is the source of truth for institutional calendar configuration. Other modules may reference calendar records but should not silently create conflicting calendar state.
+## Prototype
+यह package UI/foundation है और browser localStorage का उपयोग करता है। इसे production authentication/database/security का विकल्प न माना जाए।
